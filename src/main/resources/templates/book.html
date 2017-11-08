@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Book</title>
+</head>
+
+<body>
+
+	<header>
+		<h1> Book </h1>
+	</header>
+
+
+<!-- <div th:each="book: ${books}">
+		<p><span th:text="${'Genre:' + book.genre.genre + ' Title: ' + book.title +
+		 ' Authors: '}"></span>
+		<span th:each="author: ${book.authors}" th:text="${author.firstName 
+		+ ' ' + author.lastName}"></span></p>
+	</div> -->
+	<div>
+		<h2 th:text="${book.title} + ' ' + ${book.genre.genre}"></h2>
+		<ul>
+			<li th:each="author: ${book.authors}">
+				<a th:href="@{/author(id=${author.id})}" th:text="${author.firstName}"></a>
+			</li>
+		</ul>
+		<a href="http://localhost:8080/books">Back to home</a>
+	</div> 
+
+</body>
+</html>

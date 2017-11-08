@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Authors</title>
+</head>
+
+<body>
+<h3><a href="/authors">Our Authors</a></h3>
+<!--<h3><a href="/books">Our Instructors</a></h3> -->
+	<header>
+		<h1>Epic List of Authors</h1>
+	</header>
+
+	<div th:each="author: ${authors}">
+		<h2>
+		<a th:href="@{/author(id=${author.id})}" th:text="${author}"></a>
+		</h2>
+		</div>
+
+</body>
+</html>
