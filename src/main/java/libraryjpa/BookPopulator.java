@@ -43,15 +43,6 @@ public class BookPopulator implements CommandLineRunner {
 		// elisabeth.setBookList(book2);
 		// clifford.setBookList(book3);
 
-		System.out.println(book1.getTitle());
-		System.out.println(book1.getAuthors().size());
-
-		System.out.println(book2.getTitle());
-		System.out.println(book2.getAuthors().size());
-
-		System.out.println(book3.getTitle());
-		System.out.println(book3.getAuthors().size());
-
 	}
 
 }

@@ -13,17 +13,13 @@
 	</header>
 
 
-<!-- <div th:each="book: ${books}">
-		<p><span th:text="${'Genre:' + book.genre.genre + ' Title: ' + book.title +
-		 ' Authors: '}"></span>
-		<span th:each="author: ${book.authors}" th:text="${author.firstName 
-		+ ' ' + author.lastName}"></span></p>
-	</div> -->
 	<div>
-		<h2 th:text="${book.title} + ' ' + ${book.genre.genre}"></h2>
+		<h2 th:text="${book.title}"></h2>
+		<h3 th:text="'Genre: ' + ${book.genre.genre}"></h3>
+		<h3>Author(s):</h3>
 		<ul>
 			<li th:each="author: ${book.authors}">
-				<a th:href="@{/author(id=${author.id})}" th:text="${author.firstName}"></a>
+				<a th:href="@{/author(id=${author.id})}" th:text="${author.firstName} + ' ' + ${author.lastName}"></a>
 			</li>
 		</ul>
 		<a href="http://localhost:8080/books">Back to home</a>

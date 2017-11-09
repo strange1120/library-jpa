@@ -1,8 +1,11 @@
 package libraryjpa;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Genre {
@@ -20,8 +23,12 @@ public class Genre {
 		return genre;
 	}
 
-	// @OneToMany
-	// private Book books;
+	@OneToMany(mappedBy = "genre")
+	private Set<Book> bookList;
+
+	public Set<Book> getBookList() {
+		return bookList;
+	}
 
 	protected Genre() {
 

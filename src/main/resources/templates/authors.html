@@ -15,7 +15,7 @@
 
 	<div th:each="author: ${authors}">
 		<h2>
-		<a th:href="@{/author(id=${author.id})}" th:text="${author}"></a>
+		<a th:href="@{/author(id=${author.id})}" th:text="${author.firstName} + ' ' + ${author.lastName}"></a>
 		</h2>
 		</div>
 
